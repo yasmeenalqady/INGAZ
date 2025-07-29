@@ -1,554 +1,779 @@
-
- 
-    <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
-
- 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
-   <link rel="stylesheet" href="./src/output.css">
-   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INJAZ Al-Arab</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Font Awesome CDN -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
 
 
 </head>
-<body style="font-family: 'Poppins', sans-serif;" class="bg-white">
+<body class="bg-white text-gray-900 font-sans">
 
-  <!-- Navigation -->
-  <main class="bg-cover bg-center w-full h-screen" style="background-image: url('./image/background.png');">
+<!-- Hero Section -------------------------------------------1---------------------------------->
+<section class="relative h-screen text-white overflow-hidden">
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="https://injazalarab.org/_nuxt/videos/video.2eb28ff.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-  <!-- Header -->
- <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300 ease-in-out px-6 py-4 flex justify-between items-center">
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
 
-    <h1 class="text-xl font-bold text-black">Your Name</h1>
-
-    <!-- Hamburger Icon -->
-  <div id="menu-btn" class="px-2 py-1 text-white bg-orange-600 rounded hover:bg-orange-500 transition cursor-pointer text-3xl md:hidden flex items-center justify-center">
-  &#9776;
-</div>
-
-
-    <!-- Nav Links -->
-<nav id="menu" class="hidden md:flex space-x-6 items-center">
-  <a href="#" class="px-4 py-2 text-white bg-orange-600 rounded hover:bg-orange-500 transition">Home</a>
-  <a href="#" class="text-black hover:text-orange-500 transition">News</a>
-  <a href="#" class="text-black hover:text-orange-500 transition">Info</a>
-  <a href="#" class="text-black hover:text-orange-500 transition">About us</a>
-  <a href="#" class="text-black hover:text-orange-500 transition">Account</a>
-</nav>
-
-
-  </header>
-
-<nav id="mobile-menu" class="fixed  mt-20 top-0 left-0 w-full md:hidden hidden flex-col px-6 py-4 bg-white shadow-md space-y-3 z-50">
-  <a href="#" class="block text-orange-600 font-semibold">Home</a>
-  <a href="#" class="block text-black-700">News</a>
-  <a href="#" class="block text-black-700">Info</a>
-  <a href="#" class="block text-black-700">About us</a>
-  <a href="#" class="block text-black-700">Account</a>
-</nav>
-
-
-  <!-- Main Section -->
-  <section class="grid grid-cols-1 md:grid-cols-2  px-10 py-16 text-black">
-    <!-- Left Text -->
-    <div class="space-y-6 md:ml-15  md:mt-20 order-2 md:order-1">
-      <h2 class="text-4xl md:text-5xl font-bold">Lorem Ipsum</h2>
-      <p class="leading-relaxed max-w-md text-black/90">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis illum blanditiis consequuntur, vitae minima, id commodi in tempore assumenda, doloremque sint reprehenderit optio dolores illo necessitatibus aut adipisci neque excepturi.
-      </p>
-      <div class="flex gap-6 items-center">
-        <a href="#" class="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-6 py-2 rounded-md transition hover:scale-105 hover:from-orange-500 hover:to-orange-600">Learn more</a>
-        <a href="#" class="text-black underline hover:text-orange-400 transition">More details</a>
-      </div>
-
-      <!-- Dots -->
-      <div class="flex gap-3 pt-4">
-        <span class="w-3 h-3 bg-teal-300 rounded-full"></span>
-        <span class="w-3 h-3 bg-orange-400 rounded-full"></span>
-        <span class="w-3 h-3 bg-teal-200 rounded-full"></span>
-      </div>
-    </div>
-
-    <!-- Right Image -->
-    <div class="mt-10 md:mt-0 flex justify-center order-1 md:order-2">
-      <img src="./image/1753529928366.png"
-           alt="Shopping Illustration"
-           class="max-w-2xl w-full animate-float md:mt-30   transition-transform hover:scale-105 duration-500">
-    </div>
-  </section>
-</main>
-
-
-<!-- تضمين أيقونات Boxicons -->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-<section class="px-4 py-16">
-  <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Featured Products</h2>
-
-  <div class="max-w-7xl mx-auto">
-
-    <!-- السلايدر -->
-    <div id="slider" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory px-2 scrollbar-hide">
-
-      <!-- بطاقة منتج 1 -->
-      <div
-        class="product-card min-w-[300px] max-w-sm bg-white p-6 rounded-lg border-2 border-orange-400 shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col snap-start cursor-pointer"
-        data-name="Shopping Bag A"
-        data-manufacturer="Eco Bags Co."
-        data-description="Eco-friendly shopping bag in a variety of styles."
-        data-price="$19.99"
-        data-coupons="10% off"
-        data-image="./image/lab1.webp"
-        data-rating="4.5"
-      >
-        <img src="./image/lab1.webp" alt="Shopping Bag D"
-        class="w-full h-auto rounded hover:scale-105 transition-transform duration-500" />
-        <h3 class="text-xl font-semibold text-gray-800 mt-4">Shopping Bag A</h3>
-        <p class="text-gray-600">Eco-friendly shopping bag in a variety of styles.</p>
-        <div class="rating flex items-center gap-1 text-yellow-500 text-lg select-none mt-2"></div>
-        <div class="flex justify-between items-center mt-auto pt-4">
-          <span class="text-lg font-bold text-orange-500 price">$19.99</span>
-          <button
-            class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition"
-          >Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- بطاقة منتج 2 -->
-      <div
-        class="product-card min-w-[300px] max-w-sm bg-white p-6 rounded-lg border-2 border-orange-400 shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col snap-start cursor-pointer"
-        data-name="Shopping Bag B"
-        data-manufacturer="Fashion Co."
-        data-description="Durable and fashionable for daily use."
-        data-price="$16.99"
-        data-coupons=""
-        data-image="./image/lab2.webp"
-        data-rating="4"
-      >
-        <img src="./image/lab2.webp" alt="Shopping Bag D"
-       class="w-full h-auto rounded hover:scale-105 transition-transform duration-500" />
-        <h3 class="text-xl font-semibold text-gray-800 mt-4">Shopping Bag B</h3>
-        <p class="text-gray-600">Durable and fashionable for daily use.</p>
-        <div class="rating flex items-center gap-1 text-yellow-500 text-lg select-none mt-2"></div>
-        <div class="flex justify-between items-center mt-auto pt-4">
-          <span class="text-lg font-bold text-orange-500 price">$16.99</span>
-          <button
-            class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition"
-          >Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- بطاقة منتج 3 -->
-      <div
-        class="product-card min-w-[300px] max-w-sm bg-white p-6 rounded-lg border-2 border-orange-400 shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col snap-start cursor-pointer"
-        data-name="Shopping Bag C"
-        data-manufacturer="Minimalist Inc."
-        data-description="Minimalist and lightweight design."
-        data-price="$12.49"
-        data-coupons="Free shipping"
-        data-image="./image/lab4.webp"
-        data-rating="3"
-      >
-        <img src="./image/lab4.webp" alt="Shopping Bag D"
-        class="w-full h-auto rounded hover:scale-105 transition-transform duration-500" />
-        <h3 class="text-xl font-semibold text-gray-800 mt-4">Shopping Bag C</h3>
-        <p class="text-gray-600">Minimalist and lightweight design.</p>
-        <div class="rating flex items-center gap-1 text-yellow-500 text-lg select-none mt-2"></div>
-        <div class="flex justify-between items-center mt-auto pt-4">
-          <span class="text-lg font-bold text-orange-500 price">$12.49</span>
-          <button
-            class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition"
-          >Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- بطاقة منتج 4 -->
-      <div
-        class="product-card min-w-[300px] max-w-sm bg-white p-6 rounded-lg border-2 border-orange-400 shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col snap-start cursor-pointer"
-        data-name="Shopping Bag D"
-        data-manufacturer="Urban Style"
-        data-description="Compact and trendy shopping bag."
-        data-price="$15.00"
-        data-coupons=""
-        data-image="./image/lab2.webp"
-        data-rating="3.5"
-      >
-        <img src="./image/lab2.webp" alt="Shopping Bag D"
-         class="w-full h-60 object-contain rounded hover:scale-105 transition-transform duration-500" />
-
-        <h3 class="text-xl font-semibold text-gray-800 mt-4">Shopping Bag D</h3>
-        <p class="text-gray-600">Compact and trendy shopping bag.</p>
-        <div class="rating flex items-center gap-1 text-yellow-500 text-lg select-none mt-2"></div>
-        <div class="flex justify-between items-center mt-auto pt-4">
-          <span class="text-lg font-bold text-orange-500 price">$15.00</span>
-          <button
-            class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition"
-          >Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- بطاقة منتج 5 -->
-      <div
-        class="product-card min-w-[300px] max-w-sm bg-white p-6 rounded-lg border-2 border-orange-400 shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col snap-start cursor-pointer"
-        data-name="Shopping Bag E"
-        data-manufacturer="LightCo"
-        data-description="Lightweight and stylish."
-        data-price="$14.75"
-        data-coupons="5% off"
-        data-image="./image/lab1.webp"
-        data-rating="2.5"
-      >
-        <img src="./image/lab1.webp" alt="Shopping Bag D"
-       class="w-full h-auto rounded hover:scale-105 transition-transform duration-500" />
-        <h3 class="text-xl font-semibold text-gray-800 mt-4">Shopping Bag E</h3>
-        <p class="text-gray-600">Lightweight and stylish.</p>
-        <div class="rating flex items-center gap-1 text-yellow-500 text-lg select-none mt-2"></div>
-        <div class="flex justify-between items-center mt-auto pt-4">
-          <span class="text-lg font-bold text-orange-500 price">$14.75</span>
-          <button
-            class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition"
-          >Add to Cart</button>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- أزرار التحكم أسفل السلايدر -->
-    <div class="flex justify-center gap-4 mt-6">
-      <button
-        id="prevBtn"
-        class="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center shadow hover:bg-orange-600 transition"
-      >
-        <i class="bx bx-chevron-left text-xl"></i>
-      </button>
-      <button
-        id="nextBtn"
-        class="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center shadow hover:bg-orange-600 transition"
-      >
-        <i class="bx bx-chevron-right text-xl"></i>
-      </button>
-    </div>
+  <!-- Logo -->
+  <div class="absolute top-4 left-4 z-[9999] ml-1 sm:ml-4 mt-1">
+    <img
+      src="https://injazalarab.org/_nuxt/img/logo.a19ce7d.png"
+      alt="INJAZ Al-Arab Logo"
+      class="h-10 w-25 sm:h-[60px] sm:w-[250px]"
+    />
   </div>
 
-  <style>
-    .scrollbar-hide::-webkit-scrollbar {
-      display: none;
-    }
-    .scrollbar-hide {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
+<!-- Hero Content -->
+<div  class="  absolute inset-0 z-20 flex flex-col sm:flex-row sm:items-start sm:justify-start px-4 gap-4
+            items-center justify-center text-center sm:text-left sm:bottom-20 sm:left-20 sm:inset-auto">
+
+  <!-- Round button (left on large, top center on small) -->
+  <div class="pt-2">
+    <button class="w-12 h-12 md:mt-20 rounded-full bg-[#00a0af] flex items-center   hidden sm:flex justify-center text-white hover:bg-[#008d9a] transition">
+      <img 
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAWCAYAAAAmaHdCAAABGklEQVQ4jdWUMU4CURRFz4AJWrmDKUApKOxoZgduwC24Dk0s2IAFCZ2VnVPQGFsLZQnWlAQKE4LBY+HTkEmGGShMvM3Lf+/e839+fj4AaqreqXPraR7+FCBRT4Fn4Bi4B96o1glwASyADDVXP9SsRvhXaha5HHWp5rsANkC5umwALWBWYmqrY7VdwpkBrUbFZmfAedRSVUFq6U8gn4W6F+QJuIxaqoNtwyRJ3oFhxUb/6GJrQ9Z8v9p91ALWDWAKdPeEdIEp6ij+iM4uabUTuRFqPxYPalITkIRftf/THEZjUAUKwCD8w83BkfoYg7HaKwH0Ym74D4uGpnqjrsI0UW/Vq6iT6K/C19x23FS9Vl/VRQQX6kv002LmC1STO77xU5VDAAAAAElFTkSuQmCC" 
+        alt="Mouse Icon" 
+        class="w-4 h-8 object-contain"
+      />
+    </button>
+  </div>
+
+  <!-- Text block -->
+  <div class="-md:mt-2 mt-20 flex flex-col gap-4 items-center sm:items-start">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl leading-tight ">
+      EMPOWERING THE YOUNG MINDS OF MENA
+    </h1>
+
+    <a
+      href="#"
+      class="bg-[#00a0af] text-white font-bold h-12 w-[180px] rounded-full  md:mt-2  mt-20
+             flex items-center justify-center gap-2 hover:bg-[#008d9a] transition text-center text-lg font-sans"
+      style="font-family: 'Inter', sans-serif;"
+    >
+      Discover More &gt;
+    </a>
+  </div>
+</div>  
+
+
+  <!-- Top-Right Buttons -->
+  <div
+    class="absolute top-4 right-4 flex flex-row items-center gap-3 md:gap-6 sm:gap-4 z-20 mr-1 sm:mr-4 md:mt-4 ml-4"
+  >
+    <a
+      href="#"
+      class="bg-[#00a0af] text-white font-bold h-12 w-[110px] sm:w-[180px] md:w-[200px] max-w-[210px] rounded-full flex items-center justify-center gap-1 sm:gap-2 hover:bg-[#008d9a] transition text-center text-sm sm:text-lg font-sans"
+      style="font-family: 'Inter', sans-serif;"
+    >
+      <img
+        src="https://injazalarab.org/_nuxt/img/compus-arrow.7f03aae.svg"
+        alt="arrow"
+        class="w-5 h-5 sm:w-7 sm:h-7"
+      />
+      <span class="leading-tight sm:leading-normal block sm:inline">
+        Discover<br class="sm:hidden" /> More
+      </span>
+    </a>
+
+    <button
+      id="menuBtn"
+      class="w-12 h-12 bg-white text-[#00a0af] text-2xl font-bold rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition"
+      aria-label="Open menu"
+    >
+      &#9776;
+    </button>
+  </div>
 </section>
 
-<!-- النافذة المنبثقة (Modal) -->
+<!-- Overlay Menu -------------------------------------------2---------------------------------------->
 <div
-  id="productModal"
-  class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 p-6"
-  tabindex="-1"
+  id="overlayMenu"
+  class="fixed inset-0 bg-black bg-opacity-90 z-50 flex flex-col justify-center items-center text-white text-2xl space-y-6 hidden"
 >
-  <div
-    class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8 relative shadow-3xl flex flex-col md:flex-row gap-10"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modalName"
+  <!-- Close Button -->
+  <button
+    id="closeBtn"
+    class="fixed top-4 right-4 w-12 h-12 bg-transparent border border-white text-white text-2xl font-bold rounded-full flex items-center justify-center hover:bg-white hover:text-[#00a0af] z-50 mr-1 sm:mr-4 md:mt-4 ml-4"
+    aria-label="Close menu"
   >
-    <button
-      id="modalCloseBtn"
-      class="absolute top-5 right-5 text-gray-600 hover:text-gray-900 text-4xl font-extrabold leading-none transition-colors duration-300"
-      aria-label="Close modal"
-    >
-      &times;
-    </button>
+    &times;
+  </button>
 
-    <!-- صورة المنتج -->
-    <img
-      id="modalImage"
-      src=""
-      alt="Product Image"
-      class="w-full md:w-1/2 h-[400px] object-contain rounded-xl shadow-lg"
-    />
-
-    <!-- تفاصيل المنتج -->
-    <div class="flex flex-col justify-between md:w-1/2">
-      <div>
-        <h3 id="modalName" class="text-4xl font-bold mb-4 text-gray-900"></h3>
-        <p
-          id="modalManufacturer"
-          class="text-lg text-gray-500 mb-6 italic tracking-wide"
-        ></p>
-        <p id="modalDescription" class="text-gray-700 mb-8 leading-relaxed text-lg"></p>
-        <div class="flex items-center gap-6 mb-10">
-          <span
-            id="modalPrice"
-            class="text-3xl font-extrabold text-orange-600 tracking-wide"
-          ></span>
-          <span
-            id="modalCoupons"
-            class="px-4 py-2 bg-green-100 text-green-800 rounded-xl text-lg font-semibold shadow-inner"
-          ></span>
-        </div>
-      </div>
-
-      <div>
-        <label
-          for="modalRating"
-          class="block mb-3 font-semibold text-xl text-gray-800"
-          >Rate this product:</label
-        >
-        <div
-          id="modalRating"
-          class="flex gap-3 text-yellow-400 cursor-pointer select-none text-5xl"
-          role="radiogroup"
-          aria-label="Product rating"
-        ></div>
-      </div>
-    </div>
-  </div>
+<!-- Menu Items -->
+<div class="flex flex-col text-center space-y-2 mt-20 text-xl max-w-xs sm:max-w-md">
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Our Story</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Our Model</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Impact</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Partner Initiatives</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Partnership and Leadership</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Young Entrepreneurs Celebration</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Our Network</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Global & Regional Recognitions</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Keep Up With Youth</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Digest</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Our Library</p>
+  <p class="hover:text-teal-400 hover:text-2xl transition-all duration-300 cursor-pointer">Injaz Campus</p>
 </div>
 
 
-<script>
-  // عناصر السلايدر وأزرار التحكم
-  const slider = document.getElementById('slider');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
 
-  const cardWidth = slider.children[0].offsetWidth + 24; // عرض البطاقة + الفجوة
-
-  // التمرير عند الضغط على الأزرار
-  nextBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-  });
-
-  prevBtn.addEventListener('click', () => {
-    slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-  });
-
-  // التمرير التلقائي كل 3 ثواني
-  let autoScrollInterval = setInterval(() => {
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-      slider.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    }
-  }, 3000);
-
-  // إيقاف التمرير التلقائي عند لمس أو سحب
-  let isDragging = false;
-  let startX;
-  let scrollLeftStart;
-
-  slider.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    startX = e.touches[0].pageX - slider.offsetLeft;
-    scrollLeftStart = slider.scrollLeft;
-    clearInterval(autoScrollInterval);
-  });
-
-  slider.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - slider.offsetLeft;
-    const walk = startX - x;
-    slider.scrollLeft = scrollLeftStart + walk;
-  });
-
-  slider.addEventListener('touchend', () => {
-    isDragging = false;
-    setTimeout(() => {
-      autoScrollInterval = setInterval(() => {
-        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-          slider.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        }
-      }, 3000);
-    }, 3000);
-  });
-
-  // ========= دوال النجوم التفاعلية ==========
-
-  // إنشاء نجوم داخل عنصر
-  function createStars(rating, container, interactive = false) {
-    container.innerHTML = '';
-    for (let i = 1; i <= 5; i++) {
-      const star = document.createElement('i');
-      star.classList.add('bx');
-      if (i <= Math.floor(rating)) {
-        star.classList.add('bxs-star'); // نجمة كاملة
-      } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
-        star.classList.add('bxs-star-half'); // نصف نجمة
-      } else {
-        star.classList.add('bx-star'); // نجمة فارغة
-      }
-      star.style.fontSize = '24px';
-
-      if (interactive) {
-        star.style.cursor = 'pointer';
-        star.setAttribute('role', 'radio');
-        star.setAttribute('aria-checked', 'false');
-        star.setAttribute('tabindex', '0');
-        star.dataset.value = i;
-        star.addEventListener('click', () => {
-          updateRating(container, i);
-        });
-        star.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            updateRating(container, i);
-          }
-        });
-      }
-
-      container.appendChild(star);
-    }
-  }
-
-  // تحديث التقييم بالنجوم في النافذة والبطاقة
-  function updateRating(container, rating) {
-    createStars(rating, container, true);
-    // تحديث بيانات البطاقة الحالية
-    currentProduct.dataset.rating = rating;
-    // تحديث النجوم في البطاقة
-    const cardRatingDiv = currentProduct.querySelector('.rating');
-    createStars(rating, cardRatingDiv, false);
-  }
-
-  // عناصر النافذة المنبثقة
-  const modal = document.getElementById('productModal');
-  const modalImage = document.getElementById('modalImage');
-  const modalName = document.getElementById('modalName');
-  const modalManufacturer = document.getElementById('modalManufacturer');
-  const modalDescription = document.getElementById('modalDescription');
-  const modalPrice = document.getElementById('modalPrice');
-  const modalCoupons = document.getElementById('modalCoupons');
-  const modalRating = document.getElementById('modalRating');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-
-  // البطاقة المفتوحة حاليا
-  let currentProduct = null;
-
-  // تهيئة النجوم لكل بطاقة (غير تفاعلية)
-  document.querySelectorAll('.product-card').forEach((card) => {
-    const ratingValue = parseFloat(card.dataset.rating) || 0;
-    const ratingDiv = card.querySelector('.rating');
-    createStars(ratingValue, ratingDiv, false);
-
-    // فتح النافذة عند النقر
-    card.addEventListener('click', () => {
-      currentProduct = card;
-      modalImage.src = card.dataset.image;
-      modalImage.alt = card.dataset.name;
-      modalName.textContent = card.dataset.name;
-      modalManufacturer.textContent = card.dataset.manufacturer;
-      modalDescription.textContent = card.dataset.description;
-      modalPrice.textContent = card.dataset.price;
-      modalCoupons.textContent = card.dataset.coupons || '';
-      if (!card.dataset.coupons) {
-        modalCoupons.style.display = 'none';
-      } else {
-        modalCoupons.style.display = 'inline-block';
-      }
-      createStars(ratingValue, modalRating, true);
-
-      modal.classList.remove('opacity-0', 'pointer-events-none');
-      modal.focus();
-    });
-  });
-
-  // إغلاق النافذة
-  modalCloseBtn.addEventListener('click', () => {
-    modal.classList.add('opacity-0', 'pointer-events-none');
-  });
-
-  // إغلاق النافذة عند الضغط خارج المحتوى
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.add('opacity-0', 'pointer-events-none');
-    }
-  });
-
-  // إغلاق النافذة عند الضغط على زر Escape
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.classList.contains('opacity-0')) {
-      modal.classList.add('opacity-0', 'pointer-events-none');
-    }
-  });
-</script>
-
-
-<footer class="bg-gray-800 text-white pt-10 pb-6 mt-16">
-  <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+<!-- Social Icons with custom tooltip bubbles -->
+<div class="flex flex-wrap justify-center gap-1 mt-8 text-3xl">
+  <a href="#" title="Facebook" class="hover-animated rounded-full text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="#" title="Twitter" class="hover-animated rounded-full text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="#" title="LinkedIn" class="hover-animated rounded-full text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="#" title="Instagram" class="hover-animated rounded-full text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="#" title="YouTube" class="hover-animated rounded-full  text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-youtube"></i>
+  </a>
+</div>
+</div>
+<!-- --------------------------------------------------------3-------------------------------- -->
+<section  id="animateMe" class=" opacity-0 translate-y-8 fade-in relative container mx-auto px-6 py-5 md:py-16 mt-8  mx-10 items-center justify-center">
+  <div class="flex flex-col md:flex-row items-start justify-center gap-8">
     
-    <!-- Logo / Brand -->
-    <div>
-      <h3 class="text-2xl font-bold text-orange-400 mb-3">YourBrand</h3>
-      <p class="text-sm text-gray-300">We provide high-quality products that make your shopping experience enjoyable and memorable.</p>
+    <!-- النص الأيسر -->
+    <div   class="text-left w-full md:w-1/2">
+      <h2 class="text-4xl md:text-4xl font-bold text-black leading-snug">
+        A GENERATION OF<br> EMPOWERED YOUTH
+      </h2>
     </div>
 
-    <!-- Quick Links -->
-    <div>
-      <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-orange-400 transition">Home</a></li>
-        <li><a href="#" class="hover:text-orange-400 transition">Shop</a></li>
-        <li><a href="#" class="hover:text-orange-400 transition">About Us</a></li>
-        <li><a href="#" class="hover:text-orange-400 transition">FAQ</a></li>
-      </ul>
+    <!-- النص الأيمن مع مسافة علوية -->
+    <div   class="text-left w-full md:w-1/2 space-y-4 mt-8 md:mt-12">
+      <p class="uppercase text-sm tracking-wide text-gray-400 font-semibold">Our Story</p>
+      <p class="text-lg text-gray-800 leading-relaxed text-xl">
+        <strong>INJAZ</strong> is born from our unwavering belief in the boundless
+        potential of youth across the <strong>MENA</strong> region, and our desire
+        to catalyze this potential into success and increased economic prosperity.
+      </p>
+      <button class="bg-[#00a0af] text-white font-bold h-12 w-[180px] rounded-full 
+           flex items-center justify-center gap-2 hover:bg-[#008d9a] transition text-center text-lg font-sans">
+        Discover More &gt;
+      </button>
     </div>
 
-    <!-- Contact Info -->
-    <div>
-      <h4 class="text-lg font-semibold mb-3">Contact</h4>
-      <ul class="space-y-2 text-sm text-gray-300">
-        <li>Email: support@yourbrand.com</li>
-        <li>Phone: +1 234 567 890</li>
-        <li>Address: 123 Market St, New York, NY</li>
-      </ul>
-    </div>
+  </div>
+</section>
 
-    <!-- Social Media -->
-    <div>
-      <h4 class="text-lg font-semibold mb-3">Follow Us</h4>
-      <div class="flex gap-4 text-2xl">
-        <a href="#" class="hover:text-orange-400 transition"><i class='bx bxl-facebook'></i></a>
-        <a href="#" class="hover:text-orange-400 transition"><i class='bx bxl-twitter'></i></a>
-        <a href="#" class="hover:text-orange-400 transition"><i class='bx bxl-instagram'></i></a>
-        <a href="#" class="hover:text-orange-400 transition"><i class='bx bxl-linkedin'></i></a>
+
+
+<!-- 4----------------------------------------------4------------------------------------------ -->
+
+
+<section
+  id="history-section"
+  class="relative min-h-[80vh] bg-cover bg-center mt-6 flex flex-col items-center justify-start px-4 pb-20 opacity-0 translate-y-6 transition-opacity transition-transform duration-700"
+  style="background-image: url('https://injazalarab.org/cms/sites/default/files/2023-11/History%20of%20Injaz_Edited_0.png');"
+>
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  <div class="relative z-10 w-full max-w-7xl text-white pt-8">
+    <h2
+      id="history-title"
+      class="text-3xl md:text-4xl font-bold mb-4 text-center opacity-0 translate-y-6 transition-opacity transition-transform duration-700"
+    >
+      History of INJAZ
+    </h2>
+    <p class="text-base md:text-lg text-gray-200 mb-10 text-center">
+      Expansion Across the Region
+    </p>
+  </div>
+
+  <div class="relative w-full max-w-7xl flex justify-center px-4 flex-grow">
+    <div
+      id="history-line"
+      class="absolute left-0 w-full h-[2px] bg-white/30 z-0 opacity-0 transition-opacity duration-700"
+      style="bottom: 27px;"
+    ></div>
+
+    <div class="overflow-x-auto no-scrollbar relative z-10 w-full">
+      <div class="flex items-start justify-start min-w-max gap-10 sm:gap-20 pb-6">
+
+        <!-- نقطة زمنية -->
+        <div
+          class="group flex flex-col items-center relative timeline-point mt-[100px] min-w-[80px] sm:min-w-[100px] opacity-0 translate-y-6 transition-all duration-700"
+        >
+          <div
+            class="sm:w-16 sm:h-16 w-12 h-12 bg-[#00a9b7] rounded-full flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-lg border-4 border-white z-10"
+          >
+            2000
+          </div>
+
+          <div class="relative w-full flex flex-col items-center">
+            <div class="w-[2px] border-l-2 border-dashed border-[#00a9b7] h-[160px]"></div>
+            <div
+              class="absolute left-1/2 transform -translate-x-1/2 top-1/2 w-2.5 h-2.5 bg-[#00a9b7] border-2 border-white rounded-full shadow-md z-10"
+            ></div>
+            <div
+              class="hidden sm:flex items-center absolute top-1/2 transform -translate-y-1/2 left-[50%] translate-x-2 opacity-0 group-hover:opacity-100 transition duration-300"
+            >
+              <div class="w-10 sm:w-12 border-t-2 border-dashed border-[#00a9b7]"></div>
+              <span class="ml-2 text-[#00a9b7] text-sm font-medium whitespace-nowrap">Saudi Arabia</span>
+            </div>
+          </div>
+
+          <span class="w-[10px] h-[10px] bg-white rounded-full opacity-90 shadow-lg mt-1"></span>
+        </div>
+
+        <!-- نقطة زمنية 2 -->
+        <div
+          class="group flex flex-col items-center relative timeline-point mt-[100px] min-w-[80px] sm:min-w-[100px] opacity-0 translate-y-6 transition-all duration-700 delay-150"
+        >
+          <div
+            class="sm:w-16 sm:h-16 w-12 h-12 bg-[#00a9b7] rounded-full flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-lg border-4 border-white z-10"
+          >
+            2005
+          </div>
+
+          <div class="relative w-full flex flex-col items-center">
+            <div class="w-[2px] border-l-2 border-dashed border-[#00a9b7] h-[160px]"></div>
+            <div
+              class="absolute left-1/2 transform -translate-x-1/2 top-1/2 w-2.5 h-2.5 bg-[#00a9b7] border-2 border-white rounded-full shadow-md z-10"
+            ></div>
+            <div
+              class="hidden sm:flex items-center absolute top-1/2 transform -translate-y-1/2 left-[50%] translate-x-2 opacity-0 group-hover:opacity-100 transition duration-300"
+            >
+              <div class="w-10 sm:w-12 border-t-2 border-dashed border-[#00a9b7]"></div>
+              <span class="ml-2 text-[#00a9b7] text-sm font-medium whitespace-nowrap">United Arab Emirates</span>
+            </div>
+          </div>
+
+          <span class="w-[10px] h-[10px] bg-white rounded-full opacity-90 shadow-lg mt-1"></span>
+        </div>
+
+        <!-- نقطة زمنية 3 -->
+        <div
+          class="group flex flex-col items-center relative timeline-point mt-[100px] min-w-[80px] sm:min-w-[100px] opacity-0 translate-y-6 transition-all duration-700 delay-300"
+        >
+          <div
+            class="sm:w-16 sm:h-16 w-12 h-12 bg-[#00a9b7] rounded-full flex items-center justify-center text-white text-sm sm:text-base font-bold shadow-lg border-4 border-white z-10"
+          >
+            2010
+          </div>
+
+          <div class="relative w-full flex flex-col items-center">
+            <div class="w-[2px] border-l-2 border-dashed border-[#00a9b7] h-[160px]"></div>
+            <div
+              class="absolute left-1/2 transform -translate-x-1/2 top-1/2 w-2.5 h-2.5 bg-[#00a9b7] border-2 border-white rounded-full shadow-md z-10"
+            ></div>
+            <div
+              class="hidden sm:flex items-center absolute top-1/2 transform -translate-y-1/2 left-[50%] translate-x-2 opacity-0 group-hover:opacity-100 transition duration-300"
+            >
+              <div class="w-10 sm:w-12 border-t-2 border-dashed border-[#00a9b7]"></div>
+              <span class="ml-2 text-[#00a9b7] text-sm font-medium whitespace-nowrap">Kuwait</span>
+            </div>
+          </div>
+
+          <span class="w-[10px] h-[10px] bg-white rounded-full opacity-90 shadow-lg mt-1"></span>
+        </div>
+
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Bottom Footer -->
-  <div class="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-400">
-    &copy; 2025 YourBrand. All rights reserved.
+
+<section class="relative bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- العنوان الرئيسي -->
+      <div class="text-center mb-12 fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold text-teal-600">
+          20 Years of INJAZ
+        </h2>
+      </div>
+
+      <!-- شبكة الإحصائيات -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6" id="stats-container">
+        
+        <!-- عناصر إحصائية -->
+        <div class="bg-gray-50 rounded-xl shadow-sm p-4 text-center fade-up">
+          <div class="text-2xl sm:text-3xl font-bold text-teal-600 counter" data-target="4000">0</div>
+          <div class="text-xs sm:text-sm text-gray-600 mt-1 uppercase">Schools</div>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl shadow-sm p-4 text-center fade-up">
+          <div class="text-2xl sm:text-3xl font-bold text-teal-600 counter" data-target="426">0</div>
+          <div class="text-xs sm:text-sm text-gray-600 mt-1 uppercase">Universities</div>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl shadow-sm p-4 text-center fade-up">
+          <div class="text-2xl sm:text-3xl font-bold text-teal-600 counter" data-target="100000">0</div>
+          <div class="text-xs sm:text-sm text-gray-600 mt-1 uppercase">Volunteers</div>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl shadow-sm p-4 text-center fade-up">
+          <div class="text-2xl sm:text-3xl font-bold text-teal-600">400+</div>
+          <div class="text-xs sm:text-sm text-gray-600 mt-1 uppercase leading-tight">
+            Private Sector<br>Partners
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl shadow-sm p-4 text-center fade-up">
+          <div class="text-2xl sm:text-3xl font-bold text-teal-600">12</div>
+          <div class="text-xs sm:text-sm text-gray-600 mt-1 uppercase leading-tight">
+            MOE<br>Partnerships
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl shadow-sm p-4 text-center fade-up">
+          <div class="text-2xl sm:text-3xl font-bold text-teal-600 counter" data-target="7000000">0</div>
+          <div class="text-xs sm:text-sm text-gray-600 mt-1 uppercase">Students</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!--      -----------------------------------------6-------------------------------------------------------------------------- -->
+
+<section
+  id="history-section"
+  class="relative min-h-[70vh] bg-cover bg-center mt-6 flex flex-col items-center justify-center px-4 pb-20"
+  style="background-image: url('https://injazalarab.org/cms/sites/default/files/2023-02/support_Edited_2_0.png'); background-position: center center;"
+>
+  <!-- طبقة خلفية سوداء شفافة -->
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+ <div class="relative z-10 flex flex-col md:flex-row items-start justify-center gap-8 mt-16 max-w-7xl w-full px-4 text-white">
+
+  <!-- النص الأيسر: مرفوع لأعلى -->
+  <div
+    id="left-text"
+    class="text-left w-full md:w-1/2 opacity-0 transform -translate-y-20 transition-all duration-[1200ms]"
+  >
+    <h2 class="text-4xl md:text-4xl font-bold text-white leading-snug">
+      A GENERATION OF <br> EMPOWERED YOUTH
+    </h2>
+  </div>
+
+  <!-- النص الأيمن: بدون رفع، يبقى أسفل -->
+ <!-- النص الأيمن -->
+    <div id="right-text"
+         class="text-left w-full md:w-1/2 space-y-4 mt-8 md:mt-12 transform transition duration-1000 opacity-0 translate-x-12">
+      <p class="uppercase text-sm tracking-wide text-gray-400 font-semibold">Our Story</p>
+      <p class="text-lg text-white-800 leading-relaxed text-xl">
+        <strong>INJAZ</strong> is born from our unwavering belief in the boundless
+        potential of youth across the <strong>MENA</strong> region, and our desire
+        to catalyze this potential into success and increased economic prosperity.
+      </p>
+      <button class="bg-[#00a0af] text-white font-bold h-12 w-[180px] rounded-full 
+           flex items-center justify-center gap-2 hover:bg-[#008d9a] transition text-center text-lg font-sans">
+        Discover More &gt;
+      </button>
+    </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ---------------------------7--------------------------------------------------------- -->
+
+<!-- Title Section -->
+<section class="bg-white py-10 mt-12">
+  <div class="container mx-auto px-6 text-center">
+     <div class="text-center mb-12 fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold text-teal-600">
+         Our Impact in Numbers
+        </h2>
+      </div>
+    <!-- <h2 class="text-4xl font-extrabold text-teal-600 mb-4"></h2> -->
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      We proudly share our milestones and achievements across the region.
+    </p>
+  </div>
+</section>
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <div
+      class="flex flex-col md:flex-row justify-center items-center max-w-6xl mx-auto gap-0 relative"
+    >
+      <div
+        class="circle relative w-48 h-48 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex flex-col items-center justify-center text-white border-8 border-white shadow-xl transition-transform duration-300 hover:scale-105 z-40"
+      >
+        <div class="mb-4">
+          <svg
+            class="w-16 h-16"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+        </div>
+        <div class="text-4xl font-bold mb-2">125,765</div>
+        <div class="text-center text-sm font-medium">
+          <div>STUDENTS</div>
+          <div>REACHED</div>
+        </div>
+      </div>
+
+      <div
+        class="circle relative w-48 h-48 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex flex-col items-center justify-center text-white border-8 border-white shadow-xl transition-transform duration-300 hover:scale-105 md:-ml-6 md:z-30 -mt-6 md:mt-0 z-30"
+      >
+        <div class="mb-4">
+          <svg
+            class="w-16 h-16"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"
+            />
+          </svg>
+        </div>
+        <div class="text-4xl font-bold mb-2">7,283</div>
+        <div class="text-center text-sm font-medium">
+          <div>VOLUNTEERS</div>
+          <div>ENGAGED</div>
+        </div>
+      </div>
+
+      <div
+        class="circle relative w-48 h-48 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex flex-col items-center justify-center text-white border-8 border-white shadow-xl transition-transform duration-300 hover:scale-105 md:-ml-6 md:z-20 -mt-6 md:mt-0 z-20"
+      >
+        <div class="mb-4">
+          <svg
+            class="w-16 h-16"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+            />
+          </svg>
+        </div>
+        <div class="text-4xl font-bold mb-2">6,053</div>
+        <div class="text-center text-sm font-medium">
+          <div>ENTERPRISES</div>
+          <div>CREATED</div>
+        </div>
+      </div>
+
+      <div
+        class="circle relative w-48 h-48 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex flex-col items-center justify-center text-white border-8 border-white shadow-xl transition-transform duration-300 hover:scale-105 md:-ml-6 md:z-10 -mt-6 md:mt-0 z-10"
+      >
+        <div class="mb-4">
+          <svg
+            class="w-16 h-16"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </div>
+        <div class="text-4xl font-bold mb-2">13</div>
+        <div class="text-center text-sm font-medium">
+          <div>COUNTRIES</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- -----------------------------------------------------8-------------------------------------------------- -->
+
+<section id="network-section" class="bg-cover bg-center min-h-screen flex items-center justify-center relative transition-background duration-500" 
+    style="background-image: url('https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1470&q=80');">
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-4 md:px-12 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+      <!-- Left: Countries -->
+      <div class="text-white flex flex-col">
+
+        <h2 class="text-4xl md:text-4xl font-bold mb-6 leading-tight">
+          ACROSS A<br />
+          GROWING NETWORK
+        </h2>
+
+        <!-- قائمة الدول العادية للشاشات المتوسطة فما فوق -->
+<ul id="country-list" class="space-y-[.5px] text-lg md:text-[16px] font-medium  md:block max-w-xs">
+  <li data-country="Algeria" class="country-item cursor-pointer rounded-full px-4 py-1 text-white font-semibold inline-block w-[160px] text-center bg-cyan-600">Algeria</li>
+
+  <li data-country="Bahrain" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Bahrain</li>
+  <li data-country="Egypt" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Egypt</li>
+  <li data-country="Kuwait" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Kuwait</li>
+  <li data-country="Lebanon" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Lebanon</li>
+  <li data-country="Morocco" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Morocco</li>
+  <li data-country="Oman" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Oman</li>
+  <li data-country="Palestine" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Palestine</li>
+  <li data-country="Qatar" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Qatar</li>
+  <li data-country="Saudi Arabia" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Saudi Arabia</li>
+  <li data-country="Tunisia" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Tunisia</li>
+  <li data-country="United Arab Emirates" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">United Arab </li>
+  <li data-country="Yemen" class="country-item cursor-pointer rounded-full px-4 py-1 inline-block w-[160px] text-center transition-all duration-300 hover:bg-cyan-600 hover:text-white hover:rounded-full hover:translate-x-2">Yemen</li>
+</ul>
+
+        <!-- قائمة منسدلة للجوال فقط -->
+        <select id="country-select" class="block md:hidden bg-cyan-600 text-white rounded-full px-4 py-2 text-lg font-semibold" aria-label="Select Country">
+          <option>Algeria</option>
+          <option>Bahrain</option>
+          <option>Egypt</option>
+          <option>Kuwait</option>
+          <option>Lebanon</option>
+          <option>Morocco</option>
+          <option>Oman</option>
+          <option>Palestine</option>
+          <option>Qatar</option>
+          <option>Saudi Arabia</option>
+          <option>Tunisia</option>
+          <option>United Arab Emirates</option>
+          <option>Yemen</option>
+        </select>
+
+      </div>
+
+      <!-- Right: Cards -->
+      <div id="cards-container" class="flex flex-col mt-4 md:mt-20 space-y-2 md:pt-2">
+        <div class="flex h-20">
+          <div  style="background: linear-gradient(90deg, #1a7588, #00a0af)" class=" text-white px-6 py-4 rounded-l-lg   w-1/2 md:w-1/3  text-xl flex items-center">Student Reach</div>
+          <div id="student-reach" class="bg-white text-cyan-800 px-6 py-4 rounded-r-lg w-1/2 text-right font-bold text-2xl flex items-center justify-end">105,000</div>
+        </div>
+        <div class="flex h-20">
+          <div  style="background: linear-gradient(90deg, #1a7588, #00a0af)" class=" text-white px-6 py-4 rounded-l-lg w-1/2 md:w-1/3  text-xl flex items-center">Volunteers</div>
+          <div id="volunteers" class="bg-white text-cyan-800 px-6 py-4 rounded-r-lg w-1/2 text-right font-bold text-2xl flex items-center justify-end">1,550</div>
+        </div>
+        <div class="flex h-20">
+          <div style="background: linear-gradient(90deg, #1a7588, #00a0af)" class=" text-white px-6 py-4 rounded-l-lg w-1/2 md:w-1/3 text-xl flex items-center">Schools</div>
+          <div id="schools" class="bg-white text-cyan-800 px-6 py-4 rounded-r-lg w-1/2 text-right font-bold text-2xl flex items-center justify-end">-</div>
+        </div>
+        <div class="flex h-20">
+          <div style="background: linear-gradient(90deg, #1a7588, #00a0af)" class=" text-white px-6 py-4 rounded-l-lg w-1/2 md:w-1/3 text-xl flex items-center">Universities</div>
+          <div id="universities" class="bg-white text-cyan-800 px-6 py-4 rounded-r-lg w-1/2 text-right font-bold text-2xl flex items-center justify-end">70</div>
+        </div>
+        <div class="flex h-20">
+          <div  style="background: linear-gradient(90deg, #1a7588, #00a0af)"class=" text-white px-6 py-4 rounded-l-lg w-1/2 md:w-1/3  text-xl flex items-center">Profile</div>
+          <div id="profile" class="bg-white text-cyan-800 px-6 py-4 rounded-r-lg w-1/2 text-right font-bold text-2xl flex items-center justify-end underline">
+            <a href="#" id="profile-link" target="_blank" rel="noopener noreferrer">Profile</a>
+          </div>
+        </div>
+        <div class="flex h-20">
+          <div  style="background: linear-gradient(90deg, #1a7588, #00a0af)" class=" text-white px-6 py-4 rounded-l-lg w-1/2 md:w-1/3 font-bold text-2xl flex items-center">Links</div>
+          <div id="links" class="bg-white text-cyan-800 px-6 py-4 rounded-r-lg w-1/2 flex items-center justify-end gap-5">
+            <a href="#" id="link-main" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/24/000000/link--v1.png" alt="link"/></a>
+            <a href="#" id="link-facebook" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/24/000000/facebook-new.png" alt="facebook"/></a>
+            <a href="#" id="link-instagram" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="instagram"/></a>
+            <a href="#" id="link-twitter" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/24/000000/twitter--v1.png" alt="twitter"/></a>
+            <a href="#" id="link-linkedin" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="linkedin"/></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<!-- -------------------------------------------------------------------------------------------------------- -->
+   <section class="fade-up py-20  px-5 md:px-20">
+    <div class="text-center mb-12 fade-up">
+        <h2 class="text-3xl sm:text-4xl font-bold text-teal-600">
+        Our Partners
+        </h2>
+      </div>
+  
+    
+    <div class="overflow-hidden">
+      <div class="slider-track w-max gap-12">
+        <!-- Repeat images twice for seamless infinite slider -->
+        <div class="flex gap-12">
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 1" />
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 2" />
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 3" />
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 4" />
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 5" />
+        </div>
+        <div class="flex gap-12">
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 1" />
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 2" />
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 3" />
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 4" />
+          <img src="image/p1.png" class="h-30 w-auto" alt="Partner 5" />
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+
+<footer class="bg-gray-900 text-gray-300 py-16">
+  <div class="container mx-auto px-6 md:px-12 lg:px-24 max-w-7xl">
+
+    <!-- Newsletter -->
+    <div class="mb-16 max-w-2xl mx-auto text-center border-b border-gray-700 pb-8">
+      <h3 class="text-white text-4xl font-bold mb-5">Newsletter</h3>
+      <p class="text-gray-400 mb-6 text-sm md:text-base">Subscribe for latest news and updates</p>
+      <form class="flex flex-col sm:flex-row gap-4 justify-center items-center" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+        <input 
+          type="email" 
+          placeholder="Your email address" 
+          required
+          class="rounded-full px-5 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#00a9b7] w-full sm:w-[400px]"
+        />
+        <button type="submit"
+          class="bg-[#00a0af] text-white font-bold h-12 rounded-full flex items-center justify-center hover:bg-[#008d9a] transition text-center text-sm sm:text-lg font-sans w-full sm:w-[180px] md:w-[200px]"
+          style="font-family: 'Inter', sans-serif;">
+          <span class="leading-tight sm:leading-normal block w-full text-center">
+            Subscribe Now
+          </span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Footer Columns -->
+    <div class="flex flex-col md:flex-row justify-between gap-12 md:gap-0">
+      
+      <!-- About -->
+      <div class="md:w-1/4">
+        <h3 class="text-white text-2xl font-extrabold mb-6">INJAZ</h3>
+        <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+          Empowering youth across MENA with education, entrepreneurship, and skills development to shape a brighter future.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="md:w-1/5">
+        <h3 class="text-white text-xl font-semibold mb-5">Quick Links</h3>
+        <ul class="space-y-3 text-gray-400 text-sm md:text-base">
+          <li><a href="#" class="hover:text-[#00a9b7] transition">Home</a></li>
+          <li><a href="#" class="hover:text-[#00a9b7] transition">Programs</a></li>
+          <li><a href="#" class="hover:text-[#00a9b7] transition">Events</a></li>
+          <li><a href="#" class="hover:text-[#00a9b7] transition">About Us</a></li>
+          <li><a href="#" class="hover:text-[#00a9b7] transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="md:w-1/4">
+        <h3 class="text-white text-xl font-semibold mb-5">Contact Us</h3>
+        <ul class="space-y-5 text-gray-400 text-sm md:text-base">
+          <li class="flex items-center gap-4">
+            <a href="mailto:info@injaz.org" class="hover:text-[#00a9b7] transition flex items-center gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a9b7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 0v8a2 2 0 002 2h14a2 2 0 002-2V8" />
+              </svg>
+              info@injaz.org
+            </a>
+          </li>
+          <li class="flex items-center gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a9b7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l3 7-2 2-4 3h6" />
+            </svg>
+            <span>+123 456 7890</span>
+          </li>
+          <li class="flex items-center gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a9b7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 16v-4a2 2 0 012-2h3a2 2 0 012 2v4" />
+            </svg>
+            <span>123 INJAZ Street, City, Country</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+<div class="flex flex-wrap justify-center gap-2 mt-16 text-3xl">
+  <a href="#" title="Facebook" class="hover-animated rounded-full text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="#" title="Twitter" class="hover-animated rounded-full text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="#" title="LinkedIn" class="hover-animated rounded-full text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="#" title="Instagram" class="hover-animated rounded-full text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="#" title="YouTube" class="hover-animated rounded-full text-[#00a9b7] w-12 h-12 flex items-center justify-center transition-all duration-300 ease-in-out">
+    <i class="fab fa-youtube"></i>
+  </a>
+</div>
+
+    <!-- Bottom Note -->
+    <div class="mt-5 border-t border-gray-800 pt-8 text-center text-gray-500 text-sm select-none">
+      &copy; 2025 INJAZ. All rights reserved.
+    </div>
   </div>
 </footer>
 
 
-    <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
 
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    }, {
+      threshold: 0.15 // triggers a bit before fully visible
     });
 
-    //scroll -header
-     window.addEventListener("scroll", function () {
-    const header = document.getElementById("main-header");
-    if (window.scrollY > 10) {
-      header.classList.add("shadow-md", "bg-white");
-      header.classList.remove("bg-transparent");
-    } else {
-      header.classList.remove("shadow-md", "bg-white");
-      header.classList.add("bg-transparent");
-    }
-  });
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
+    });
   </script>
 
+<script src="./js/script.js"></script>
+  
 </body>
 </html>
