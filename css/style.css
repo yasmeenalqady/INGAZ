@@ -176,7 +176,14 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-  
-  
-
+ 
+  #canvasPath {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10; /* رفع الطبقة ليظهر فوق المحتوى إذا أردت */
+  background: transparent; /* تأكد أنه شفاف لو أردت فقط الخط */
+}

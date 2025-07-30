@@ -22,6 +22,8 @@
 
 </head>
 <body class="bg-white text-gray-900 font-sans">
+ <canvas id="canvasPath" class="hidden md:block xl:block"></canvas>
+
 
 <!-- Hero Section -------------------------------------------1---------------------------------->
 <section class="relative h-screen text-white overflow-hidden">
@@ -47,16 +49,17 @@
 <div  class="  absolute inset-0 z-20 flex flex-col sm:flex-row sm:items-start sm:justify-start px-4 gap-4
             items-center justify-center text-center sm:text-left sm:bottom-20 sm:left-20 sm:inset-auto">
 
-  <!-- Round button (left on large, top center on small) -->
-  <div class="pt-2">
-    <button class="w-12 h-12 md:mt-20 rounded-full bg-[#00a0af] flex items-center   hidden sm:flex justify-center text-white hover:bg-[#008d9a] transition">
-      <img 
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAWCAYAAAAmaHdCAAABGklEQVQ4jdWUMU4CURRFz4AJWrmDKUApKOxoZgduwC24Dk0s2IAFCZ2VnVPQGFsLZQnWlAQKE4LBY+HTkEmGGShMvM3Lf+/e839+fj4AaqreqXPraR7+FCBRT4Fn4Bi4B96o1glwASyADDVXP9SsRvhXaha5HHWp5rsANkC5umwALWBWYmqrY7VdwpkBrUbFZmfAedRSVUFq6U8gn4W6F+QJuIxaqoNtwyRJ3oFhxUb/6GJrQ9Z8v9p91ALWDWAKdPeEdIEp6ij+iM4uabUTuRFqPxYPalITkIRftf/THEZjUAUKwCD8w83BkfoYg7HaKwH0Ym74D4uGpnqjrsI0UW/Vq6iT6K/C19x23FS9Vl/VRQQX6kv002LmC1STO77xU5VDAAAAAElFTkSuQmCC" 
-        alt="Mouse Icon" 
-        class="w-4 h-8 object-contain"
-      />
-    </button>
-  </div>
+<div class="pt-2 hidden md:block " >
+  <button id="btn" class=" relative w-12 h-12 md:mt-20 rounded-full bg-[#00a0af] flex items-center justify-center text-white hover:bg-[#008d9a] transition">
+    <img 
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAWCAYAAAAmaHdCAAABGklEQVQ4jdWUMU4CURRFz4AJWrmDKUApKOxoZgduwC24Dk0s2IAFCZ2VnVPQGFsLZQnWlAQKE4LBY+HTkEmGGShMvM3Lf+/e839+fj4AaqreqXPraR7+FCBRT4Fn4Bi4B96o1glwASyADDVXP9SsRvhXaha5HHWp5rsANkC5umwALWBWYmqrY7VdwpkBrUbFZmfAedRSVUFq6U8gn4W6F+QJuIxaqoNtwyRJ3oFhxUb/6GJrQ9Z8v9p91ALWDWAKdPeEdIEp6ij+iM4uabUTuRFqPxYPalITkIRftf/THEZjUAUKwCD8w83BkfoYg7HaKwH0Ym74D4uGpnqjrsI0UW/Vq6iT6K/C19x23FS9Vl/VRQQX6kv002LmC1STO77xU5VDAAAAAElFTkSuQmCC" 
+      alt="Mouse Icon" 
+      class="w-4 h-8 object-contain z-20"
+    />
+    
+  </button>
+ 
+</div>
 
   <!-- Text block -->
   <div class="-md:mt-2 mt-20 flex flex-col gap-4 items-center sm:items-start">
@@ -306,11 +309,12 @@
     <div class="max-w-7xl mx-auto">
 
       <!-- العنوان الرئيسي -->
-      <div class="text-center mb-12 fade-up">
-        <h2 class="text-3xl sm:text-4xl font-bold text-teal-600">
-          20 Years of INJAZ
-        </h2>
-      </div>
+    <div class="text-center mb-12 fade-up z-[9999]">
+  <h2 class="text-3xl sm:text-4xl font-bold text-teal-600">
+    20 Years of INJAZ
+  </h2>
+</div>
+
 
       <!-- شبكة الإحصائيات -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6" id="stats-container">

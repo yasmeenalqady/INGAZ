@@ -478,3 +478,134 @@ function updateContent(country) {
     updateContent(initialCountry);
     highlightSelectedCountry(initialCountry);
   });
+
+  //////////////////////////////////////////////////
+  
+    const canvas = document.getElementById('canvasPath');
+  const ctx = canvas.getContext('2d');
+
+  // نقاط كل قسم (إحداثيات نسبية داخل القسم)
+  const sectionsPoints = [
+    [ {x: 115, y: 520}, {x: 115, y:600} ], // القسم الأول
+    [ {x: 115, y: 0}, {x: 115, y: 50}, {x: 650, y: 50}, {x: 650, y: 420} ,{x: 1400, y: 420}],
+    [ {x: 1400, y: 0}, {x: 1400, y: 450}, {x:750, y:450},{x:750, y:620},{x:100, y:620},{x:100, y:1800} ,{x:700, y:1800},{x:700, y:2490}] // القسم الثالث
+  ];
+
+  // تحويل نقاط كل قسم إلى إحداثيات على الصفحة كاملة (نجمع ارتفاع الأقسام السابقة)
+  function getAllPoints() {
+    let allPoints = [];
+    let cumulativeHeight = 0;
+    const vh = window.innerHeight;
+    for(let i=0; i<sectionsPoints.length; i++) {
+      const pts = sectionsPoints[i].map(p => ({
+        x: p.x,
+        y: p.y + cumulativeHeight
+      }));
+      allPoints = allPoints.concat(pts);
+      cumulativeHeight += vh;
+    }
+    return allPoints;
+  }
+
+  // حساب أطوال المقاطع بين النقاط
+  function calcLengths(points) {
+    const lengths = [];
+    let totalLength = 0;
+    for (let i = 1; i < points.length; i++) {
+      const dx = points[i].x - points[i - 1].x;
+      const dy = points[i].y - points[i - 1].y;
+      const len = Math.sqrt(dx * dx + dy * dy);
+      lengths.push(len);
+      totalLength += len;
+    }
+    return { lengths, totalLength };
+  }
+
+  // دالة مساعدة لحساب نقطة تحكم منحنية بين نقطتين (لإنشاء زوايا منحنية)
+  // هنا نأخذ منتصف النقطة ونزحها عمودياً أو أفقياً حسب شكل الخط
+  function getControlPoint(p0, p1) {
+    // مثال بسيط: نزح عمودي 30px للأعلى
+    const ctrlX = (p0.x + p1.x) / 2;
+    const ctrlY = (p0.y + p1.y) / 2 - 30; // يمكنك تعديل 30 حسب حجم الانحناء
+    return { x: ctrlX, y: ctrlY };
+  }
+
+  // رسم الخط حسب الطول المطلوب بزوايا منحنية
+  function drawPath(ctx, points, lengths, lengthToDraw) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+
+  const adjustedPoints = points.map(p => ({ x: p.x, y: p.y - window.scrollY }));
+  if (adjustedPoints.length < 2) return;
+
+  const radius = 60; // نصف قطر الانحناء - زِد القيمة لرؤية انحناء أوضح
+
+  let currentLen = 0;
+  ctx.moveTo(adjustedPoints[0].x, adjustedPoints[0].y);
+
+  for (let i = 1; i < adjustedPoints.length; i++) {
+    const p0 = adjustedPoints[i - 1];
+    const p1 = adjustedPoints[i];
+    const segLen = lengths[i - 1];
+
+    if (currentLen + segLen < lengthToDraw) {
+      if (i < adjustedPoints.length - 1) {
+        const p2 = adjustedPoints[i + 1];
+
+        // نحسب الاتجاه من p0 إلى p1 ومن p1 إلى p2
+        ctx.lineTo(p1.x, p1.y);
+        ctx.arcTo(p1.x, p1.y, p2.x, p2.y, radius);
+      } else {
+        ctx.lineTo(p1.x, p1.y);
+      }
+      currentLen += segLen;
+    } else {
+      const remain = lengthToDraw - currentLen;
+      const ratio = remain / segLen;
+      const x = p0.x + (p1.x - p0.x) * ratio;
+      const y = p0.y + (p1.y - p0.y) * ratio;
+      ctx.lineTo(x, y);
+      break;
+    }
+  }
+
+ // قبل ctx.stroke();
+ctx.lineJoin = 'round';   // جرب 'bevel' أيضاً إذا أردت زاوية مقطوعة
+ctx.lineCap  = 'round';   // يجعل الأطراف مدورة
+ctx.lineWidth = 10;
+ctx.strokeStyle = "#00a0af";
+ctx.stroke();
+
+}
+
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function onScroll() {
+    const points = getAllPoints();
+    const { lengths, totalLength } = calcLengths(points);
+
+    if(window.scrollY === 0) {
+      // لا نرسم شيء في أعلى الصفحة
+      drawPath(ctx, points, lengths, 0);
+      return;
+    }
+
+    const scrollPos = window.scrollY + window.innerHeight;
+    const lengthToDraw = Math.min(totalLength, scrollPos * 1.5);
+
+    drawPath(ctx, points, lengths, lengthToDraw);
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    onScroll();
+  });
+
+  window.addEventListener('scroll', onScroll);
+
+  resize();
+  onScroll();
