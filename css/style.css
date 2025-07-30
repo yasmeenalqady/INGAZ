@@ -187,3 +187,8 @@
   z-index: 10; /* رفع الطبقة ليظهر فوق المحتوى إذا أردت */
   background: transparent; /* تأكد أنه شفاف لو أردت فقط الخط */
 }
+@media (max-width: 768px) {
+  #canvasPath {
+    display: none;
+  }
+}
